@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import FeedbackContext from '../context/FeedbackContext';
 
-function FeedbackStats({feedback}) {
+function FeedbackStats() {
 // Calculate avarage rating
+const {feedback} = useContext(FeedbackContext)
 
   let avarage = feedback.reduce((acc, cur)=>{
     return acc + cur.rating
