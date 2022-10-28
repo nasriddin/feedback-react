@@ -1,4 +1,4 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 
 const FeedbackContext = createContext();
@@ -10,23 +10,11 @@ export const FeedbackProvider = ({ children }) => {
       edit: false
     }
   )
-  const [feedback, setFeedback] = useState([
-    {
-      id: 1,
-      rating: 10,
-      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. consequuntur vel vitae commodi alias voluptatem est voluptatum ipsa quae.",
-    },
-    {
-      id: 2,
-      rating: 10,
-      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. consequuntur vel vitae commodi alias voluptatem est voluptatum ipsa quae.",
-    },
-    {
-      id: 3,
-      rating: 10,
-      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. consequuntur vel vitae commodi alias voluptatem est voluptatum ipsa quae.",
-    },
-  ]);
+  const [feedback, setFeedback] = useState([]);
+
+  useEffect(()=>{
+
+  }, [])
 
   const addFeedback = (newFeedback) => {
     newFeedback.id = uuidv4();
